@@ -1,0 +1,193 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "posts",
+  "apis": [
+    {
+      "path": "/posts.json",
+      "operations": [
+        {
+          "summary": "Gets all Posts",
+          "nickname": "Posts#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/posts.json",
+      "operations": [
+        {
+          "summary": "Creates a new Post",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "trip",
+              "type": "integer",
+              "description": "Trip ID",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "tagline",
+              "type": "string",
+              "description": "Post Caption",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "like_count",
+              "type": "integer",
+              "description": "Like count*",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "comments_count",
+              "type": "integer",
+              "description": "Comment count*",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "date",
+              "type": "date",
+              "description": "Post date",
+              "required": true
+            }
+          ],
+          "notes": "fields marked with a * are updated with a callback on upades to like/comment tables",
+          "responseMessages": [
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "nickname": "Posts#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/posts/{id}.json",
+      "operations": [
+        {
+          "summary": "Shows one Post",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Post ID",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "nickname": "Posts#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/posts/{id}.json",
+      "operations": [
+        {
+          "summary": "Updates a Post",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Post Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "trip",
+              "type": "integer",
+              "description": "Trip ID",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "tagline",
+              "type": "string",
+              "description": "Post Caption",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "like_count",
+              "type": "integer",
+              "description": "Like count*",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "comments_count",
+              "type": "integer",
+              "description": "Comment count*",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "date",
+              "type": "date",
+              "description": "Post date",
+              "required": false
+            }
+          ],
+          "notes": "fields marked with a * are updated with a callback on upades to like/comment tables",
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "nickname": "Posts#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/posts/{id}.json",
+      "operations": [
+        {
+          "summary": "Deletes a Post",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Post Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "nickname": "Posts#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

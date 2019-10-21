@@ -1,0 +1,213 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "trips",
+  "apis": [
+    {
+      "path": "/trips.json",
+      "operations": [
+        {
+          "summary": "Gets all Trips",
+          "nickname": "Trips#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/trips.json",
+      "operations": [
+        {
+          "summary": "Creates a new Trip",
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "user",
+              "type": "integer",
+              "description": "User ID",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "from_location",
+              "type": "string",
+              "description": "From location",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "to_location",
+              "type": "string",
+              "description": "To location",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "distance",
+              "type": "integer",
+              "description": "Distance in miles",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "start_date",
+              "type": "date",
+              "description": "Start Date",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "end_date",
+              "type": "date",
+              "description": "End Date",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "visible",
+              "type": "boolean",
+              "description": "Post Visibility",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "nickname": "Trips#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/trips/{id}.json",
+      "operations": [
+        {
+          "summary": "Shows one Trip",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Trip ID",
+              "required": true
+            }
+          ],
+          "notes": "Lists all attributes for a trip.",
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "nickname": "Trips#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/trips/{id}.json",
+      "operations": [
+        {
+          "summary": "Updates a Trip",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Trip Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "from_location",
+              "type": "string",
+              "description": "From location",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "to_location",
+              "type": "string",
+              "description": "To location",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "distance",
+              "type": "integer",
+              "description": "Distance in miles",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "start_date",
+              "type": "date",
+              "description": "Start Date",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "end_date",
+              "type": "date",
+              "description": "End Date",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "visible",
+              "type": "boolean",
+              "description": "Post Visibility",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "nickname": "Trips#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/trips/{id}.json",
+      "operations": [
+        {
+          "summary": "Deletes a Trip",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Trip Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "nickname": "Trips#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}
