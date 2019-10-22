@@ -1,7 +1,7 @@
 {
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
-  "basePath": "http://localhost:3000",
+  "basePath": "https://ios-maps-api.herokuapp.com",
   "apis": [
     {
       "path": "/apidocs/users.{format}",
@@ -35,6 +35,6 @@
   "authorizations": null,
   "info": {
     "title": "Maps API",
-    "description": "API build for the iOS Maps project, docs by SwaggerUI"
+    "description": " "
   }
 }
