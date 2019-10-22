@@ -1,8 +1,12 @@
 class CommentsController < ApplicationController
-  
+    swagger_controller :comments, "Comments"
+
     before_action :set_comment, only: [:show, :update, :destroy]
-  
+    
     # GET /comments
+    swagger_api :index do
+      summary "Gets all Comments"
+    end
     def index
       @comments = Comment.all
   
@@ -10,11 +14,24 @@ class CommentsController < ApplicationController
     end
   
     # GET /comments/1
+    swagger_api :show do
+      summary "Shows one Comment"
+      param :path, :id, :integer, :required, "Comment ID"
+      response :not_found
+    end
     def show
       render json: @comment
     end
   
     # POST /comment
+    swagger_api :create do
+      summary "Creates a new Comment"
+      param :form, :user, :integer, :required, "User ID"
+      param :form, :post, :integer, :required, "Post ID"
+      param :form, :likes_count, :integer, :required, "Likes Count"
+      param :form, :comment, :string, :required, "Comment"
+      response :not_acceptable
+    end
     def create
       @comment = Comment.new(comment_params)
   
@@ -26,6 +43,14 @@ class CommentsController < ApplicationController
     end
   
     # PATCH/PUT /comment/1
+    swagger_api :update do
+      summary "Updates a Comment"
+      param :form, :id, :integer, :required, "Comment ID"
+      param :form, :likes_count, :integer, :optional, "Likes Count"
+      param :form, :comment, :string, :optional, "Comment"
+      response :not_found
+      response :not_acceptable
+    end
     def update
       if @comment.update(comment_params)
         render json: @comment
@@ -35,6 +60,11 @@ class CommentsController < ApplicationController
     end
   
     # DELETE /comment/1
+    swagger_api :destroy do
+      summary "Deletes a Comment"
+      param :path, :id, :integer, :required, "Comment Id"
+      response :not_found
+    end
     def destroy
       @comment.destroy
     end

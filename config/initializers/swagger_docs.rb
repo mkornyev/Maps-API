@@ -22,13 +22,14 @@ Swagger::Docs::Config.register_apis({
 
     #PRODUCTION:
     :base_path => "https://ios-maps-api.herokuapp.com",
+
     # if you want to delete all .json files at each generation
     :clean_directory => false,
     # add custom attributes to api-docs
     :attributes => {
       :info => {
         "title" => "Maps API",
-        "description" => "API build for the iOS Maps project, docs by SwaggerUI"
+        "description" => " "
       }
     }
   }

@@ -8,7 +8,7 @@ class PostLikesController < ApplicationController
       summary "Gets all Post likes"
     end
     def index
-      @post_likes = Post_like.all
+      @post_likes = PostLike.all
   
       render json: @post_likes
     end

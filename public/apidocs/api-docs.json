@@ -1,7 +1,7 @@
 {
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
-  "basePath": "https://ios-maps-api.herokuapp.com",
+  "basePath": "http://localhost:3000",
   "apis": [
     {
       "path": "/apidocs/users.{format}",
@@ -14,6 +14,18 @@
     {
       "path": "/apidocs/posts.{format}",
       "description": "Posts"
+    },
+    {
+      "path": "/apidocs/comments.{format}",
+      "description": "Comments"
+    },
+    {
+      "path": "/apidocs/friends.{format}",
+      "description": "Friendships"
+    },
+    {
+      "path": "/apidocs/comment_likes.{format}",
+      "description": "Comment Likes"
     },
     {
       "path": "/apidocs/post_likes.{format}",

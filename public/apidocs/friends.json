@@ -1,0 +1,79 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "friends",
+  "apis": [
+    {
+      "path": "/friends.json",
+      "operations": [
+        {
+          "summary": "Gets all Friendships",
+          "nickname": "Friends#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/friends.json",
+      "operations": [
+        {
+          "summary": "Creates a new Friendship",
+          "parameters": [
+
+          ],
+          "responseMessages": [
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "nickname": "Friends#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/friends/{id}.json",
+      "operations": [
+        {
+          "summary": "Shows one Friendship",
+          "parameters": [
+
+          ],
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "nickname": "Friends#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/friends/{id}.json",
+      "operations": [
+        {
+          "summary": "Deletes a Friendship",
+          "parameters": [
+
+          ],
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "nickname": "Friends#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}
